@@ -32,7 +32,8 @@ git clone https://github.com/hereshecodes/secureskills.git %USERPROFILE%\.claude
 | [secrets-management](skills/secrets-management/SKILL.md) | No hardcoded secrets, env vars, vault patterns |
 | [api-security](skills/api-security/SKILL.md) | Rate limiting, CORS, auth headers, input limits |
 | [input-validation](skills/input-validation/SKILL.md) | Server-side validation, file uploads, type safety |
-| [accessibility](skills/accessibility/SKILL.md) | WCAG 2.1 AA, semantic HTML, keyboard nav, screen readers |
+| [accessibility](skills/accessibility/SKILL.md) | WCAG 2.1 AA, with [criteria map](skills/accessibility/wcag-2.1-aa.md): focus, dialogs, tooltips, grids, errors, contrast |
+| [accessibility-testing](skills/accessibility-testing/SKILL.md) | axe in CI, keyboard pass, screen reader pass, zoom and contrast checks |
 | [security-headers](skills/security-headers/SKILL.md) | CSP, HSTS, X-Frame-Options, Referrer-Policy |
 | [dependency-security](skills/dependency-security/SKILL.md) | Vulnerability scanning, pinned versions, supply chain |
 
@@ -50,7 +51,7 @@ secureskills/
     └── ...
 ```
 
-The **security-context** skill loads on every task and sets the baseline: default to secure, validate at boundaries, never trust client input. The other 10 skills trigger when you're working in their domain.
+The **security-context** skill loads on every task and sets the baseline: default to secure, validate at boundaries, never trust client input. The other 11 skills trigger when you're working in their domain.
 
 Skills cross-reference each other. When you're building an API endpoint, `api-security` loads and points you to `input-validation` and `authentication` for related rules.
 
